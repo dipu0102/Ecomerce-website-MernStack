@@ -95,7 +95,7 @@ export const updateProfile = expressAsyncHandler(async (req, res) => {
   console.log(req.body);
 
   //First we find if the user exist
-  const user = await User.findById(_id);
+  const user = await User.findById(req.user);
   console.log(user);
 
   if (user) {
@@ -104,7 +104,7 @@ export const updateProfile = expressAsyncHandler(async (req, res) => {
     user.address = req.body.address || user.address;
     user.phone = req.body.phone || user.phone;
   }
-  const updateUser = await User.save();
+  const updateUser = await user.save();
   console.log(updateUser);
   if (user) {
     res.json({
@@ -143,6 +143,7 @@ export const getAllProfile = expressAsyncHandler(async (req, res) => {
 export const deleteUserProfile = expressAsyncHandler(async (req, res) => {
   try {
     const users = await User.findOneAndDelete(req.params.id);
+    console.log(users);
     res.json({
       message: "User removed",
     });

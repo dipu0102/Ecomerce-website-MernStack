@@ -15,6 +15,6 @@ userRouter.post("/login", loginUser);
 userRouter.get("/profile", protect, profile);
 userRouter.put("/profile", protect, updateProfile);
 userRouter.get("/users", protect, authorize("admin"), getAllProfile);
-userRouter.delete("/users/:id", protect, deleteUserProfile);
+userRouter.delete("/:id", protect, deleteUserProfile);
 
 export default userRouter;
