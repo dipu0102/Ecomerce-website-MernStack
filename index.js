@@ -9,6 +9,7 @@ import {
   notFounderrorHandler,
 } from "./src/middlewares/errorHandler.js";
 import userRouter from "./src/routes/userRoutes.js";
+import vendorRouter from "./src/routes/vendorRoutes.js";
 //Load Enviroment Variable from .env file
 dotenv.config();
 
@@ -27,11 +28,7 @@ app.use(cors());
 //Api Routes
 
 app.use("/api/user", userRouter);
-app.get("/", (req, res) => {
-  res.json({
-    message: "active working",
-  });
-});
+app.use("/api/vendor", vendorRouter);
 //error Handler Middleware
 app.use(errorHandler);
 // app.use(notFounderrorHandler);
