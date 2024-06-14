@@ -1,5 +1,5 @@
 import express from "express";
-import { protect } from "../middlewares/authmiddleware.js";
+
 import {
   createVendor,
   deleteVendor,
