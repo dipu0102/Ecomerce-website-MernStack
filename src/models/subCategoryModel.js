@@ -1,26 +1,21 @@
 import mongoose from "mongoose";
 import slugify from "slugify";
-
-const branSchema = new mongoose.Schema(
+const subcategorySchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
-      unique: true,
-    },
-    slug: {
-      type: String,
+      require: true,
       unique: true,
     },
     description: String,
-    logo: String,
+    slug: String,
   },
   { timestamps: true }
 );
 
-branSchema.pre("save", async function (next) {
+subcategorySchema.pre("save", async function (next) {
   this.slug = slugify(this.name.toLowerCase());
   console.log(this.slug);
   next();
 });
-export const Brand = mongoose.model("Brand", branSchema);
+export const SubCategory = mongoose.model("SubCategory", subcategorySchema);
