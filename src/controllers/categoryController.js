@@ -29,7 +29,9 @@ export const getAllCategorys = expressAsyncHandler(async (req, res) => {
 //get Category
 export const getCategoryBySlug = expressAsyncHandler(async (req, res) => {
   try {
+    console.log("slug");
     const category = await Category.findOne({ slug: req.params.slug });
+    console.log(category);
     res.status(200).json({
       status: true,
       data: category,

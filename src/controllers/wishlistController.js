@@ -29,7 +29,7 @@ export const getAllWishlists = expressAsyncHandler(async (req, res) => {
 //get Wishlist
 export const getWishlistBySlug = expressAsyncHandler(async (req, res) => {
   try {
-    const wishlist = await Wishlist.findOne({ slug: req.params.slug });
+    const wishlist = await Wishlist.findById(req.params.id);
     res.status(200).json({
       status: true,
       data: wishlist,
