@@ -70,7 +70,7 @@ export const deleteSubCategory = expressAsyncHandler(async (req, res) => {
     res.status(200).json({
       status: true,
       message: "SubCategory Deleted successfully",
-      data: SubCategory,
+      data: subcategory,
     });
   } catch (error) {
     throw new Error(error);

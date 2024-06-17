@@ -67,7 +67,7 @@ export const deleteProduct = expressAsyncHandler(async (req, res) => {
     res.status(200).json({
       status: true,
       message: "Product Deleted successfully",
-      data: Product,
+      data: product,
     });
   } catch (error) {
     throw new Error(error);

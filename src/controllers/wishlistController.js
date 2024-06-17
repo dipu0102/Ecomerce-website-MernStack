@@ -66,7 +66,7 @@ export const deleteWishlist = expressAsyncHandler(async (req, res) => {
     res.status(200).json({
       status: true,
       message: "Wishlist Deleted successfully",
-      data: Wishlist,
+      data: wishlist,
     });
   } catch (error) {
     throw new Error(error);

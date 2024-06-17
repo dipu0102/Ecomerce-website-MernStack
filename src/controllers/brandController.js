@@ -66,7 +66,7 @@ export const deleteBrand = expressAsyncHandler(async (req, res) => {
     res.status(200).json({
       status: true,
       message: "Brand Deleted successfully",
-      data: Brand,
+      data: brand,
     });
   } catch (error) {
     throw new Error(error);

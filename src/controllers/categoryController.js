@@ -68,7 +68,7 @@ export const deleteCategory = expressAsyncHandler(async (req, res) => {
     res.status(200).json({
       status: true,
       message: "Category Deleted successfully",
-      data: Category,
+      data: category,
     });
   } catch (error) {
     throw new Error(error);
